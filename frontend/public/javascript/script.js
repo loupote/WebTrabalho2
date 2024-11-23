@@ -16,7 +16,7 @@ function exibeListaDeParticipantes() {
             for (let i = 0; i < campos.length; i++) {
                 let td = document.createElement('td');
                 let href = document.createElement('a');
-                href.setAttribute('href', 'update.html?user_id=' + participante['user_id']);
+                href.setAttribute('href', 'update.html?id=' + participante['user_id']);
                 let texto = document.createTextNode(participante[campos[i]]);
                 href.appendChild(texto);
                 td.appendChild(href);

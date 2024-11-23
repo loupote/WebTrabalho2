@@ -41,7 +41,23 @@ INSTALLED_APPS = [
     'rest_framework',
     'participantes',
     'corsheaders',
+
+    #swaggers
+    'drf_yasg',
+    'coreapi',
+
+    'accounts',
+
+    'rest_framework.authtoken',
+
+    'django_rest_passwordreset',
 ]
+
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS':
+'rest_framework.schemas.coreapi.AutoSchema',
+'DEFAULT_AUTHENTICATION_CLASSES': [
+'rest_framework.authentication.TokenAuthentication', ],
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
