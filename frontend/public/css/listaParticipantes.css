@@ -1,0 +1,65 @@
+/* Style général pour le tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* Style pour les en-têtes de colonne */
+thead {
+    background-color: #f2f2f2;
+}
+
+/* Style pour les cellules de l'en-tête */
+thead th {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Style pour les lignes du corps du tableau */
+tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Style pour les cellules du corps du tableau */
+tbody td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Style pour les lignes paires */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Style pour les lignes impaires */
+tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+/* Style pour la barre de recherche */
+#searchInput {
+    padding: 10px;
+    margin: 10px 0;
+    width: calc(100% - 22px);
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Style pour le conteneur de bienvenue */
+.welcome {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Style pour le titre */
+.welcome h1 {
+    font-size: 24px;
+    color: #333;
+}

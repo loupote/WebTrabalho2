@@ -1,10 +1,14 @@
 "use strict";
 onload = (evento) => {
-    document.getElementById('logout').addEventListener('click', (evento) => {
+    const logoutButton = document.getElementById('logout');
+    const backButton = document.getElementById('voltar');
+    logoutButton.addEventListener('click', (evento) => {
         const token = localStorage.getItem('token');
         fetch(backendAddress + 'accounts/token-auth/', {
-            method: 'DELETE', headers: {
-                'Authorization': tokenKeyword + token, 'Content-Type': 'application/json'
+            method: 'DELETE',
+            headers: {
+                'Authorization': tokenKeyword + token,
+                'Content-Type': 'application/json'
             }
         })
             .then(response => {
@@ -14,6 +18,11 @@ onload = (evento) => {
             else
                 mensagem.innerHTML = 'Erro ' + response.status;
         })
-            .catch(erro => { console.log(erro); });
+            .catch(erro => {
+            console.log(erro);
+        });
+    });
+    backButton.addEventListener('click', function () {
+        window.location.assign('/');
     });
 };

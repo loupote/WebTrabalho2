@@ -1,0 +1,23 @@
+#header{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+}
+
+#headerlinks{
+    color: black;
+    font-size: 20px;
+}
+
+.headerlogo{
+    background-color: rgb(128, 176, 128);
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerlogo img{
+    width: 100%;
+    height: 100%;
+}

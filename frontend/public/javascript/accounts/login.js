@@ -29,7 +29,7 @@ onload = () => {
             .then((data) => {
             const token = data.token;
             localStorage.setItem('token', token);
-            window.location.replace('loginDone.html');
+            window.location.replace('/');
         })
             .catch(erro => { console.log(erro); });
     });

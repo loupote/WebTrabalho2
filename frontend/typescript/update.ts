@@ -10,7 +10,7 @@ onload = () => {
         fetch(backendAddress + 'participantes/umparticipante/' + id + '/')
             .then(response => response.json())
             .then(participante => {
-                let campos = ['nome', 'sobrenome', 'genero', 'dtNasc', 'idade', 'distancia', 'email'];
+                let campos = ['nome', 'sobrenome', 'distancia', 'tempo'];
                 for (let i = 0; i < campos.length; i++) {
                     (document.getElementById(campos[i]) as HTMLInputElement).value = participante[campos[i]];
                 }
@@ -39,7 +39,7 @@ onload = () => {
         })
             .then(response => {
                 if (response.ok) {
-                    (document.getElementById('mensagem') as HTMLDivElement).innerHTML = 'Sucesso';
+                    window.location.href = "listaParticipantes.html";
                 } else {
                     (document.getElementById('mensagem') as HTMLDivElement).innerHTML = 'Erro: ' + response.status + " " + response.statusText;
                 }

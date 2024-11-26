@@ -11,7 +11,7 @@ onload = () => {
         })
             .then(response => {
                 if (response.ok) {
-                    (document.getElementById('mensagem') as HTMLDivElement).innerHTML = 'Dados inseridos com sucesso'
+                    window.location.href = "listaParticipantes.html";
                 } else {
                     (document.getElementById('mensagem') as HTMLDivElement).innerHTML = 'Dados inseridos com erro'
                 }

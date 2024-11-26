@@ -5,7 +5,7 @@ from django.utils import timezone
 
 # Create your models here.
 
-class Participante(models.Model):
+class Participante1(models.Model):
     user_id = models.AutoField(primary_key=True)
     nome = models.TextField(db_column='NOME')
     sobrenome = models.TextField(db_column='SOBRENOME')
@@ -35,3 +35,26 @@ class Participante(models.Model):
     def save(self, *args, **kwargs):
         self.idade = self.get_idade()
         super().save(*args, **kwargs)
+
+
+DISTANCE_CHOICES = [
+        (5, '5 quilômetros'),
+        (10, '10 quilômetros'),
+        (21, '21 quilômetros'),
+    ]
+
+
+class Participante(models.Model):
+    id = models.AutoField(primary_key=True)
+    nome = models.TextField(db_column='NOME')
+    sobrenome = models.TextField(db_column='SOBRENOME')
+    distancia = models.IntegerField(db_column='DISTANCIA', choices=DISTANCE_CHOICES)
+    tempo = models.TextField(db_column='TEMPO', max_length=20)
+
+    class Meta:
+        managed = True
+        db_table = 'RunnersList'
+        ordering = ['sobrenome']
+
+    def __str__(self):
+        return self.nome

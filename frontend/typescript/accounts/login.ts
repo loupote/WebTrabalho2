@@ -25,7 +25,9 @@ onload = () => {
                 }
             })
             .then((data: { token: string }) => {
-                const token: string = data.token; localStorage.setItem('token', token); window.location.replace('loginDone.html');
+                const token: string = data.token;
+                localStorage.setItem('token', token);
+                window.location.replace('/');
             })
             .catch(erro => { console.log(erro) })
     });

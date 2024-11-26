@@ -33,7 +33,7 @@ Retorna uma lista de participantes. Depende de:
 :return: uma lista de participantes em formato JSON
 :rtype: JSON
 '''
-        queryset = Participante.objects.all().order_by('user_id')
+        queryset = Participante.objects.all().order_by('id')
         # importante informar que o queryset terá mais
         # # de 1 resultado usando many=True
         serializer = ParticipantesSerializer(queryset, many=True)
@@ -49,9 +49,9 @@ Retorna uma lista de participantes. Depende de:
         id_erro = ""
         erro = False
         for id in request.data:
-            carro = Participante.objects.get(user_id=id)
-            if carro:
-                carro.delete()
+            participante = Participante.objects.get(id=id)
+            if participante:
+                participante.delete()
             else:
                 id_erro += str(id)
                 erro = True
@@ -64,18 +64,15 @@ Retorna uma lista de participantes. Depende de:
 
 class RunnerView1(APIView):
     @swagger_auto_schema(
-        operation_summary='Criar carro',
-        operation_description="Criar um novo carro",
+        operation_summary='Criar participante',
+        operation_description="Criar um novo participante",
         request_body=openapi.Schema(
             type=openapi.TYPE_OBJECT,
             properties={
                 'nome': openapi.Schema(default='Michael', description='Nome do participante', type=openapi.TYPE_STRING),
                 'sobrenome': openapi.Schema(default='Jackson', description='Sobrenome do participante', type=openapi.TYPE_STRING),
-                'genero': openapi.Schema(default='M', description='Genero', type=openapi.TYPE_STRING),
-                'dtNasc': openapi.Schema(default='1958-08-29', description='Data de nascimento', type=openapi.TYPE_STRING),
-                'idade': openapi.Schema(default=50, description='Idade', type=openapi.TYPE_NUMBER),
-                'distancia': openapi.Schema(default='5km', description='Distancia para correr', type=openapi.TYPE_STRING),
-                'email': openapi.Schema(default='michaeljackson@gmail.com', description='Email do participante', type=openapi.TYPE_STRING),
+                'distancia': openapi.Schema(default=5, description='Distancia para correr', type=openapi.TYPE_INTEGER),
+                'tempo': openapi.Schema(default="20''0'", description='Tempo da corrida do participante', type=openapi.TYPE_STRING),
             },
         ),
         responses={
@@ -119,29 +116,26 @@ class RunnerView2(APIView):
             return Response(serializer.data)
         else:
             # response for IDs that is not an existing runner
-            return Response({'msg': f'Carro com id #{id_arg} não existe'},
+            return Response({'msg': f'participante com id #{id_arg} não existe'},
                             status.HTTP_400_BAD_REQUEST)
         
     def singleRunner(self, id_arg):
         try:
-            queryset = Participante.objects.get(user_id=id_arg)
+            queryset = Participante.objects.get(id=id_arg)
             return queryset
         except Participante.DoesNotExist: # id não existe
             return None
     
     @swagger_auto_schema(
-        operation_summary='Atualiza carro', operation_description="Atualizar um carro existente",
+        operation_summary='Atualiza participante', operation_description="Atualizar um participante existente",
         request_body=openapi.Schema(type=openapi.TYPE_OBJECT,
             properties={
                 'nome': openapi.Schema(default='Michael', description='Nome do participante', type=openapi.TYPE_STRING),
                 'sobrenome': openapi.Schema(default='Jackson', description='Sobrenome do participante', type=openapi.TYPE_STRING),
-                'genero': openapi.Schema(default='M', description='Genero', type=openapi.TYPE_STRING),
-                'dtNasc': openapi.Schema(default='1958-08-29', description='Data de nascimento', type=openapi.TYPE_STRING),
-                'idade': openapi.Schema(default=50, description='Idade', type=openapi.TYPE_NUMBER),
-                'distancia': openapi.Schema(default='5km', description='Distancia para correr', type=openapi.TYPE_STRING),
-                'email': openapi.Schema(default='michaeljackson@gmail.com', description='Email do participante', type=openapi.TYPE_STRING),
-
-        }),
+                'distancia': openapi.Schema(default=5, description='Distancia para correr', type=openapi.TYPE_INTEGER),
+                'tempo': openapi.Schema(default="20''0'", description='Tempo da corrida do participante', type=openapi.TYPE_STRING),
+            },
+            ),
         responses={200: ParticipantesSerializer(),
                    400: ParticipantesSerializer(), },
         manual_parameters=[
@@ -149,8 +143,8 @@ class RunnerView2(APIView):
                               required=True, description='id do participante na URL')],
                               )
     def put(self, request, id_arg):
-        carro = self.singleRunner(id_arg)
-        serializer = ParticipantesSerializer(carro,data=request.data)
+        participante = self.singleRunner(id_arg)
+        serializer = ParticipantesSerializer(participante,data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status.HTTP_200_OK)

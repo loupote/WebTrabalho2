@@ -8,7 +8,7 @@ function exibeListaDeParticipantes() {
     fetch(backendAddress + "participantes/lista/")
         .then(response => response.json())
         .then(participantes => {
-        let campos = ['nome', 'sobrenome', 'genero', 'idade', 'distancia'];
+        let campos = ['id', 'nome', 'sobrenome', 'distancia', 'tempo'];
         let tbody = document.getElementById('idtbody');
         tbody.innerHTML = "";
         for (let participante of participantes) {
@@ -16,7 +16,7 @@ function exibeListaDeParticipantes() {
             for (let i = 0; i < campos.length; i++) {
                 let td = document.createElement('td');
                 let href = document.createElement('a');
-                href.setAttribute('href', 'update.html?id=' + participante['user_id']);
+                href.setAttribute('href', 'update.html?id=' + participante['id']);
                 let texto = document.createTextNode(participante[campos[i]]);
                 href.appendChild(texto);
                 td.appendChild(href);
@@ -24,9 +24,9 @@ function exibeListaDeParticipantes() {
             }
             let checkbox = document.createElement('input');
             checkbox.setAttribute('type', 'checkbox');
-            checkbox.setAttribute('name', 'user_id');
-            checkbox.setAttribute('id', 'user_id');
-            checkbox.setAttribute('value', participante['user_id']);
+            checkbox.setAttribute('name', 'id');
+            checkbox.setAttribute('id', 'id');
+            checkbox.setAttribute('value', participante['id']);
             let td = document.createElement('td');
             td.appendChild(checkbox);
             tr.appendChild(td);

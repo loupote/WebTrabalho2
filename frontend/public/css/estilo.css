@@ -9,3 +9,86 @@
 .mesmaLinha {
     display: inline;
 }
+
+
+#content{
+    background-color: white;
+}
+
+
+
+#welcome{
+    background-color: rgb(255, 217, 0);
+    width: 600px;
+    margin: auto;
+    color: black;
+    text-align: center;
+}
+
+#participatelink{
+    background-color: rgb(255, 218, 175);
+    width: 650px;
+    margin: auto;
+    color: black;
+    text-align: center;
+}
+
+
+#tabela{
+    margin: auto;
+}
+
+
+#photos{
+    background-color: rgb(255, 119, 0);
+    min-height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#photos .box{
+    background-color: yellow;
+    width: 300px;
+    height: 300px;
+    border: solid;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#footer{
+    background-color: red;
+    height: 50px;
+    text-align: right;
+    color: white;
+    font-size: 40px;
+}
+
+
+button {
+    background-color: #ffdf40;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e04340;
+    color: rgb(255, 255, 255);
+}

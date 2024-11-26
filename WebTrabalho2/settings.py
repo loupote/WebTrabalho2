@@ -118,13 +118,15 @@ DATABASES = {
     'DBRunners': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-        'OPTIONS': {
-            'timeout': 20,  # Augmentez le délai d'attente à 20 secondes
         },
+
+    'DBRunners2': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'runners.db',
         },
 }
 
-DATABASE_ROUTERS = ["WebTrabalho2.db_router.DBRouter"]
+DATABASE_ROUTERS = ["WebTrabalho2.db_router.DBRouter", "WebTrabalho2.db_router.DBRouter2"]
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
