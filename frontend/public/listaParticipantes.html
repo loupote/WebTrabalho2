@@ -11,30 +11,35 @@
     <script src="javascript/constantes.js"></script>
     <link rel="stylesheet" href="css/listaParticipantes.css">
     <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/botoes.css">
 </head>
 
 <body>
     <iframe src="cabecalho.html" frameborder="0" width="100%" height="50" id="cabecalho"></iframe>
     <div class ="welcome">
-        <h1>Participantes</h1>
+        <h1>Resultados da edição 2024.2</h1>
     </div>
     <form action="" method="get">
-        <input type="text" id="searchInput" placeholder="Search by name or bib number">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search by name or bib number">
+            <input type="button" value="Insere" id="insere"/>
+            <input type="button" value="Remove" id="remove"/>
+        </div>
         <table border="1">
             <thead>
                 <tr>
-                    <td>Número <br> peito</td>
-                    <td>Nome</td>
-                    <td>Sobrenome</td>
-                    <td>Distancia (km)</td>
-                    <td>Tempo (hh:mm'ss'')</td>
-                    <td>Remove</td>
+                    <div class="titulocoluna">
+                        <td>Número <br> peito</td>
+                        <td>Nome</td>
+                        <td>Sobrenome</td>
+                        <td>Distancia (km)</td>
+                        <td>Tempo (hh:mm'ss'')</td>
+                        <td>Remove</td>
+                    </div>
                 </tr>
             </thead>
             <tbody id="idtbody"></tbody>
         </table>
-        <input type="button" value="Insere" id="insere"/>
-        <input type="button" value="Remove" id="remove"/>
     </form>
 </body>
 

@@ -76,19 +76,3 @@
     color: white;
     font-size: 40px;
 }
-
-
-button {
-    background-color: #ffdf40;
-    color: rgb(0, 0, 0);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #e04340;
-    color: rgb(255, 255, 255);
-}

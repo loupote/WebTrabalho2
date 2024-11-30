@@ -63,3 +63,31 @@ tbody tr:nth-child(odd) {
     font-size: 24px;
     color: #333;
 }
+
+/* Style pour le conteneur des éléments de recherche et des boutons */
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espace entre les éléments */
+    margin-bottom: 20px; /* Espace en dessous du conteneur */
+}
+
+/* Style pour les inputs et boutons */
+.search-container input[type="text"],
+.search-container input[type="button"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Style pour la barre de recherche */
+.search-container input[type="text"] {
+    flex-grow: 1; /* Permet à la barre de recherche de prendre l'espace disponible */
+}
+
+#titulocoluna {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #333;
+}
