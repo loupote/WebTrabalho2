@@ -7,36 +7,52 @@
     <title>Logout?</title>
     <script src="javascript/accounts/logout.js"></script>
     <script src="javascript/constantes.js"></script>
-    <link rel="stylesheet" href="css/botoes.css">
     <style>
+        body {
+            background-image: url('img/runphotos/foto3.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
 
-        #cabecalho {
+        #quadrado {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+        }
+
+        button {
+            background-color: #ffcc00;
+            color: rgb(0, 0, 0);
             border: none;
-            margin-bottom: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-
-        #mensagem {
-            margin-top: 20px;
-            font-size: 1.1em;
-            color: #333;
-
+        button:hover {
+            background-color: #e04340;
+            color: rgb(255, 255, 255);
         }
     </style>
 </head>
 
 <body>
     <iframe src="cabecalho.html" frameborder="0" width="100%" height="50" id="cabecalho"></iframe>
-    <h1>Tem certeza de que deseja sair da sessão?</h1>
-    <p>
-        <button type="button" id="logout">Fazer logout</button>
-        <button type="button" id="voltar">Não, voltar à pagina anterior</button>
-    </p>
-    <div id="mensagem"></div>
+    <div id="quadrado">
+        <h1>Tem certeza de que deseja sair da sessão?</h1>
+        <p>
+            <button type="button" id="logout">Fazer logout</button>
+            <button type="button" id="voltar">Não, voltar à pagina anterior</button>
+        </p>
+        <div id="mensagem"></div>
+    </div>
 </body>
 
 </html>

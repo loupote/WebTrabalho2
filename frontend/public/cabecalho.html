@@ -6,7 +6,22 @@
     <script src="javascript/constantes.js"></script>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/estilo.css">
-    <link rel="stylesheet" href="css/botoes.css">
+    <style>
+        button {
+            background-color: #ffcc00;
+            color: rgb(0, 0, 0);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #e04340;
+            color: rgb(255, 255, 255);
+        }
+    </style>
 </head>
 
 <body>
@@ -17,13 +32,12 @@
         <div class="headerlinks">
             <a href="/" target="_top"><button type="button">Home</button></a>
             <div id="unlogged" class="visivel">
-                | <a href="login.html" target="_top"><button type="button">Login </button></a>
+                | <a href="login.html" target="_top"><button type="button">Login</button></a>
             </div>
             <div id="logged" class="visivel">
                 | <a href="listaParticipantes.html" target="_top"><button type="button">Ver os participantes</button></a>
                 | <a href="passwordChange.html" target="_top"><button type="button">Troca senha</button></a>
                 | <a href="logout.html" target="_top"><button type="button">Logout</button></a>
-                | <a href="loginDone.html" target="_top"><button type="button">Conta: <div id="identificacao" class="mesmaLinha">visitante</button></div></a>
             </div>
         </div>
     </div>

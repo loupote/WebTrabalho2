@@ -18,7 +18,7 @@
 
 
 #welcome{
-    background-color: rgb(255, 217, 0);
+    background-color: #ffcc00;
     width: 600px;
     margin: auto;
     color: black;
@@ -26,7 +26,7 @@
 }
 
 #participatelink{
-    background-color: rgb(255, 218, 175);
+    background-color: #ffcc00;
     width: 650px;
     margin: auto;
     color: black;
@@ -40,7 +40,7 @@
 
 
 #photos{
-    background-color: rgb(255, 119, 0);
+    background-color: #ffcc00;
     min-height: 400px;
 
     display: flex;
@@ -52,7 +52,7 @@
 }
 
 #photos .box{
-    background-color: yellow;
+    background-color: #ffcc00;
     width: 300px;
     height: 300px;
     border: solid;
@@ -70,7 +70,7 @@
 }
 
 #footer{
-    background-color: red;
+    background-color: rgb(255, 173, 67);
     height: 50px;
     text-align: right;
     color: white;
